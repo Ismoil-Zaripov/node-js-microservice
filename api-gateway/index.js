@@ -13,12 +13,11 @@ const proxy = httpProxy.createProxyServer();
 
 // Define target servers
 const userTarget = 'http://localhost:3001';
-const authTarget = 'http://localhost:3002';
 
 // Rate limiter middleware
 const limiter = rateLimit({
     windowMs: 60 * 100, // 1 minute
-    max: 5, // limit each IP to 2 requests per windowMs
+    max: 5, // limit each IP to 5 requests per windowMs
     message: 'Too many requests from this IP, please try again later'
 });
 
